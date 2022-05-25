@@ -39,9 +39,9 @@ A partir desses novos dados, será investigado também a qualidade dos dados ger
 
 Por fim, será desenvolvido um preditor para determinar o tamanho da placa de gordura na artéria de cada paciente a partir de suas expressões de miRNA. A hipótese é que a partir dos pacientes artificiais seja possível fazer um *data augmentation * para ter resultados mais precisos.
 
-#Metodologia
+# Metodologia
 A metodologia desse trabalho conta com uma parceria com o laboratório cardiovascular da FCM, e os dados são coletados a partir de pessoas reais.
-###Banco de dados
+### Banco de dados
 Os dados foram coletados de 178 pacientes, e foram analisadas 84 características (genéticas, fisiológicas e comportamentais). Abaixo a tabela com as variáveis a suas descrições
 
 | Característica | Tipo | Descrição|
@@ -52,10 +52,10 @@ Os dados foram coletados de 178 pacientes, e foram analisadas 84 característica
 ### Abordagem
 Esse trabalho será abordado em quatro fases:
 
-1. **Coleta e ocultação/deleção dos dados sensíveis: ** todo dado que possa identificar uma pessoa é retirado deste trabalho;
-2. **Síntese de dados:** Utilizar a abordagem de CTGAN para gerar um conjunto de pacientes artificiais com as 84 características;
-3. **Validação:** Utilizar cálculos já estabelecidos (IMC, por exemplo) e profissionais do laboratório cardiovascular da FCM para validar os dados gerados;
-4. **Regressão:** Criação e treino de uma rede neural que faz regressão duas vezes, uma com a adição dos dados sintéticos e outra sem, com o objetivo de obter um erro menor com os novos pacientes.
+1. Coleta e ocultação/deleção dos dados sensíveis: todo dado que possa identificar uma pessoa é retirado deste trabalho;
+2. Síntese de dados: Utilizar a abordagem de CTGAN para gerar um conjunto de pacientes artificiais com as 84 características;
+3. Validação: Utilizar cálculos já estabelecidos (IMC, por exemplo) e profissionais do laboratório cardiovascular da FCM para validar os dados gerados;
+4. Regressão: Criação e treino de uma rede neural que faz regressão duas vezes, uma com a adição dos dados sintéticos e outra sem, com o objetivo de obter um erro menor com os novos pacientes.
 
 ### Avaliação
 Para a avaliar os dados gerados, vai ser utilizado além da validação descrita na subseção acima (cálculos já conhecidos, e validação de profissionais da área da saúde), vão ser comparados as métricas de regressão clássicas, como RSME (*Root Square Mean Error*). A hipótese é que com a adição dos pacientes sintéticos provenientes da CTGAN, o classificador tenha um desempenho melhor.

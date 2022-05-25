@@ -47,7 +47,89 @@ Os dados foram coletados de 178 pacientes, e foram analisadas 84 característica
 | Característica | Tipo | Descrição|
 |--|--|--|
 | HC | inteiro | número de identificação do paciente
-|Status| Categórico | Status 
+|Status| Categórico | Grupo a qual o paciente pertence (1-sem placa, 2- com placa)| 
+|Idade|Inteiro|Idade do Paciente
+|Sexo|Categórico| Sexo do paciente (0-M, 1-H)
+|PAS|Ponto Flutuante| Pressão arterial sistólica
+|PAD|Ponto Flutuante| Pressão arterial diastólica
+|FC|Ponto Flutuante| Frequência cardíaca
+|Septo|Ponto Flutuante| Medida do septo cardíaco feito pela ultrassonografia 
+|PP|Ponto Flutuante| Medida da parede posterior do coração 
+|DDFVE|Ponto Flutuante| Diâmetro diastólico do ventrículo esquerdo
+|DSFVE|Ponto Flutuante| Diâmetro sistólico do ventrículo esquerdo 
+|Peso|Ponto Flutuante| Peso do paciente
+|Altura|Ponto Flutuante| Altura do paciente
+|ASC|Ponto Flutuante| Área de superfície corpórea
+|IMC|Ponto Flutuante| Índice de massa corpórea
+|MVE|Ponto Flutuante| Massa ventricular esquerda
+|FE|Ponto Flutuante| Fração de Ejeção
+|MVE17|Ponto Flutuante| Massa ventricular esquerda
+|MVEAltura|Ponto Flutuante| Massa ventricular esquerda/altura
+|MVEASC|Ponto Flutuante| -
+|RWT|Ponto Flutuante| -
+|Geometria| Categórico| Formato do remodelamento cardíaco  
+|DM|Categórico| Paciente com diabetes melitus (1- com diabetes, 0- saudável)
+|Glicose|Ponto Flutuante|  Quantidade de glicose no sangue
+|CT|Ponto Flutuante| Colesterol total no sangue
+|TG|Ponto Flutuante| Concentração de triglicérides no sangue 
+|HDL|Ponto Flutuante| Concentração de HDL no sangue
+|LDL|Ponto Flutuante| Concentração de LDL no sangue
+|Ureia|Ponto Flutuante| Taxa de uréia no sangue
+|Creatinina|Ponto Flutuante| Dosagem de creatina no sanguue
+|aciduric|Ponto Flutuante| Taxa de ácido úrico no sangue
+|statusAU| Categórico | Classificação relacionado ao ácido úrico  
+|LDLox|Ponto Flutuante| Quantificação de LDL oxidado no sangue 
+|mir185|Ponto Flutuante| Expressão do microRNA mir-185
+|logmir185|Ponto Flutuante| Expressão do logarítmo do microRNA mir-185
+|mirlet7|Ponto Flutuante| Expressão do microRNA mir-let7
+|logmirlet7|Ponto Flutuante| Expressão do logarítmo do microRNA mir-let7
+|mir30a|Ponto Flutuante|  Expressão do microRNA mir-30a
+|logmir30a|Ponto Flutuante| Expressão do logarítmo do microRNA mir-30a
+|mir451|Ponto Flutuante| Expressão do microRNA mir-451
+|logmir451|Ponto Flutuante| Expressão do logarítmo do microRNA mir-451
+|mir92a|Ponto Flutuante| Expressão do microRNA mir-92a
+|logmir92a|Ponto Flutuante| Expressão do logarítmo do microRNA mir-92a
+|mir145|Ponto Flutuante| Expressão do microRNA mir-145
+|logmir145|Ponto Flutuante|Expressão do logarítmo do microRNA mir-145
+|dsveimt|Ponto Flutuante| Medida da pressão sistólica na camada íntima média  
+|ddveimt|Ponto Flutuante| Medida da pressão diastólica na camada íntima média
+|IMT|Ponto Flutuante| Espessura da placa de gordura na artéria (mm) 
+|StatusIMT|Categórico| Classificação do paciente de acordo com a espessura da placa de gordura (1- placa < 0.8mm, 2- placa >= 0.8mm )
+|vari|Ponto Flutuante| Identificação da ultrasonografia
+|Presenplaca|Categórico| Presença de placa nas artérias (1- presente, 0- ausente)
+|Placadir|Ponto Flutuante|Medida da placa de gordura à direita
+|Intdir|Ponto Flutuante| Medida da placa de gordura na camada íntima-direita
+|Meddir|Ponto Flutuante| Medida da placa de gordura na camada media-direita
+|AdvDir|Ponto Flutuante| Medida da placa de gordura na adventícia-direita
+|PlcaEsq|Ponto Flutuante| Medida da placa de gordura à esquerda
+|Intesq|Ponto Flutuante| Medida da placa de gordura na camada íntima-esquerda
+|MedEsq|Ponto Flutuante| Medida da placa de gordura na camada media-esquerda
+|AdvEsq|Ponto Flutuante| Medida da placa de gordura na adventícia-esquerda
+|Intima|Ponto Flutuante| Medida da camada íntima (esquerda e direita)
+|media|Ponto Flutuante| Medida da camada média (esquerda e direita)
+|adventicia|Ponto Flutuante| Medida da camada adventícia (esquerda e direita)
+|VAR00001|Ponto Flutuante| -
+|Tabagismo|Categórico| Fumante (0-não, 1-fumante) 
+|DAC|Categórico|Doença arterial coronariana(0-não possui, 1-possui) 
+|IAM|Categórico| Paciente já sofreu um infarto agudo do miocárdio (0-não, 1-sim)
+|AVC|Categórico| Paciente já sofreu um AVC (0-não, 1-sim)
+|IF|Categórico| Paciente sofre de insuficiência cardíaca (0-não, 1-sim)
+|Diuretico|Categórico|Paciente faz uso de remédios diuréticos  (0-não, 1-sim)
+|IECA|Categórico| Paciente faz uso de remédios inibidores da enzima conversora de angiotensina (0-não, 1-sim)
+|BRA|Categórico|Paciente faz uso de remédios bloqueadores dos receptores de angiotensina (0-não, 1-sim)
+|IEBRA|Categórico|Paciente faz uso de remédios IECA OU BRA  (0-não, 1-sim)
+|betabloq|Categórico|Paciente faz uso de remédios beta bloqueadores (anti-hipertensivo) (0-não, 1-sim)
+|BCC|Categórico|Paciente faz uso de remédios bloqueadores de canal de cálcio (0-não, 1-sim)
+|Medicação|Categórico|Paciente faz uso de remédios que não se enquadram  (0-não, 1-sim)
+|Antaaldost|Categórico| Paciente faz uso de remédios antagonista de aldosterona (0-não, 1-sim)
+|agoalfacentral|Categórico|Paciente faz uso de remédios alfa agonistas de ação central (0-não, 1-sim)
+|agoalfaper|Categórico|Paciente faz uso de remédios agonistas alfa periféricos (0-não, 1-sim)
+|vasodilat|Categórico|Paciente faz uso de remédios vasodilatadores (0-não, 1-sim)
+|statinas|Categórico| Paciente faz uso de estatininas (0-não, 1-sim)
+|AAS|Categórico| Paciente faz uso de anticoagulante (0-não, 1-sim)
+|obesidade|Categórico| Obesidade (1-não, 2-sim)
+
+
 
 ### Abordagem
 Esse trabalho será abordado em quatro fases:

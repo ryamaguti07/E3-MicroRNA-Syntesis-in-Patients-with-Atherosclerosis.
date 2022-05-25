@@ -70,7 +70,7 @@ As ferramentas que são utilizadas nesse trabalho são:
 # Resultados
 O primeiro passo da metodologia, remover os dados sensíveis, foi feita utilizando o SPSS e não será demonstrado. Foi removido os nomes, datas de nascimento e foi gerado um novo identificador aleatório para esse trabalho.
 
-Ao adaptar a CTGAN para a aplicação no contexto de miRNA, a pasta "syntetic data" contém os primeiros pacientes gerados.
+Ao adaptar a CTGAN para a aplicação no contexto de miRNA, a pasta "reports" contém os primeiros pacientes gerados.
 
 Foram gerados 15 novos pacientes, apesar dos dados gerados estarem com os mesmos tipos de dados que os originais, alguns pacientes não poderiam existir, como os exemplos: um paciente com concentração de ureia no sangue de 57mg/dL, um paciente com IMC errado (sua altura e seu peso não batem com o IMC).
 

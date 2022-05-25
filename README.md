@@ -47,6 +47,7 @@ Os dados foram coletados de 178 pacientes, e foram analisadas 84 característica
 | Característica | Tipo | Descrição|
 |--|--|--|
 | HC | inteiro | número de identificação do paciente
+|Status| Categórico | Status 
 
 ### Abordagem
 Esse trabalho será abordado em quatro fases:

@@ -40,7 +40,7 @@ Modelos generativos tem sido muito popular nos últimos anos nas áreas de gera�
 
 A partir desses novos dados, será investigado também a qualidade dos dados gerados, e como as correlações já observadas se comportam com a adição de dados artificias.
 
-Por fim, será desenvolvido um preditor para determinar o tamanho da placa de gordura na artéria de cada paciente a partir de suas expressões de miRNA. A hipótese é que a partir dos pacientes artificiais seja possível fazer um *data augmentation * para ter resultados mais precisos.
+Por fim, será desenvolvido um preditor para determinar o tamanho da placa de gordura na artéria de cada paciente a partir de suas expressões de miRNA. A hipótese é que a partir dos pacientes artificiais seja possível fazer um *data augmentation* para ter resultados mais precisos.
 
 # Metodologia
 A metodologia desse trabalho conta com uma parceria com o laboratório cardiovascular da FCM, e os dados são coletados a partir de pessoas reais.
@@ -133,7 +133,7 @@ Os dados foram coletados de 178 pacientes, e foram analisadas 84 característica
 |obesidade|Categórico| Obesidade (1-não, 2-sim)
 
 A distribuição desses dados pode ser vista na Figura abaixo:
-
+![alt text](https://github.com/ryamaguti07/E3-MicroRNA-Syntesis-in-Patients-with-Atherosclerosis./blob/main/reports/images/variables.png)
 Como notado, nenhuma das variáveis tem distribuições guassiana. Com isso em vista, a utilização da CopulaGAN é adequada uma vez que a CTGAN tem dificuldade de aprender padrões e interdependência, como a medida da camada íntima-média e o Status da doença.
 
 

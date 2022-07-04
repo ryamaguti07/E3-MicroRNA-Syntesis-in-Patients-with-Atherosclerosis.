@@ -32,6 +32,7 @@ Porém, a quantificação de microRNAs é um processo caro, desempenhado atravé
 CTGAN, e subsequentemente a CopulaGAN, é uma subcategoria de GAN (*Generative Adversal Network*) porém voltada para dados tabulares. GANs são redes neurais compostas por dois componentes, o gerador e o descriminador que são treinados simultaneamente. Dados tabulares, diferentemente de imagens e áudios, que são contínuas, podem conter dados de tipos variados (inteiros, decimais, categóricos), diferentes formas de distribuição (multimodal, gaussiano, não-gaussiano, etc.) e podem ser muito desbalanceados. Nesse contexto, é foi necessário a utilização de uma CTGAN, criando um modo específico para normalização para superar as distribuições não-gaussianas e multidimensional. O treinamento também é feito exemplo por exemplo, para que a CTGAN explore todos os possíveis valores de cada categoria.
 
 Uma CTGAN pode ser entendida por:
+![alt text](https://github.com/ryamaguti07/E3-MicroRNA-Syntesis-in-Patients-with-Atherosclerosis./blob/main/reports/images/ctgan.png)
 
 A Copula definida pela Figura abaixo, pode ajudar a CTGAN a sintentizar dados novos em situações nas quais as distribuições marginais são mais importantes.
 

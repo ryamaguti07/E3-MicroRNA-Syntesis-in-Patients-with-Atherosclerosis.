@@ -168,7 +168,10 @@ Foram gerados 50 novos pacientes, que possuem características reais, que poderi
 Foram desenvolvidos dois tipos de classficadores: Uma rede neural densa e uma regressão logísticia. 
 Para ambos os casos foi utilizado a base de dados para o treinamento e a adição de dados nunca vistos pela rede para os testes
 
+
+
 | Tipo de rede | Adição de Dados Sintéticos | Acurácia | F1-Score |
+|-|-|-|-|
 | Rede Neural Densa | - | 73.33% | 0.83 | 
 | Rede Neural Densa | x | 63.04% | 0.75 |
 | Regressão Logística | - | 70.0 % | - |

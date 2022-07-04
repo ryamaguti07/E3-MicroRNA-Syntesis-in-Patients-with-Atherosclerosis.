@@ -153,7 +153,7 @@ As ferramentas que são utilizadas nesse trabalho são:
 
 - [Google Colab](https://colab.research.google.com/ "Google Colab")
 - [Pytorch](https://pytorch.org/ "Pytorch")
-- [Scikit-learn] (https://scikit-learn.org/stable/modules/linear_model.html#logistic-regression)
+- [Scikit-learn] (https://scikit-learn.org/stable/modules/linear_model.html#logistic-regression "Scikit-learn")
 - [CopulaGAN](https://sdv.dev/SDV/user_guides/single_table/copulagan.html) (SDV/Syntentic Data Vault)
 - [SPSS](https://www.ibm.com/br-pt/analytics/spss-statistics-software "SPSS")
 
@@ -172,17 +172,19 @@ Para ambos os casos foi utilizado a base de dados para o treinamento e a adiçã
 
 | Tipo de rede | Adição de Dados Sintéticos | Acurácia | F1-Score |
 |-|-|-|-|
-| Rede Neural Densa | - | 73.33% | 0.83 | 
+| Rede Neural Densa | - | 60.0 % | 0.67 | 
 | Rede Neural Densa | x | 63.04% | 0.75 |
-| Regressão Logística | - | 70.0 % | - |
+| Regressão Logística | - | 56.66% | 0.72 |
 | Regressão Logística | x | 80.43% | 0.89 |
 
+Através dessa avaliação dos classificadores, pode-se dizer que a síntese de dados ajudou a melhorar o desempenho dos classificadores, aumentando significativamente a acurácia da Regressão logística. 
+
 # Conclusão
-A síntese de dados tem ganho muita popularidade devido a seus desempenhos nos campos de geração de imagem, texto e dados tabulares. Esse trabalho vem apresentar a utilização de uma CTGAN para gerar dados na área da saúde, em específico para a geração de pacientes com Aterosclerose no contexto de estudo da relação dos miRNA com a placa de gordura característica da doença.
+A síntese de dados tem ganho muita popularidade devido a seus desempenhos nos campos de geração de imagem, texto e dados tabulares. Esse trabalho vem apresentar a utilização de uma CopulaGAN para gerar dados na área da saúde, em específico para a geração de pacientes com Aterosclerose no contexto de estudo da relação dos miRNA com a placa de gordura característica da doença.
 
 O desenvolvimento desse projeto já conta com pacientes sintéticos gerados, porém os pacientes gerados apresentam problemas em sua geração (pacientes que não poderiam existir).
 
-Nas próximas semanas, a geração desses novos dados será otimizada e será criado um preditor para determinar, utilizando os miRNA, a espessura da placa de gordura. Esse preditor será treinado com os dados originais e depois com a adição dos dados sintéticos, para atingir uma maior precisão.
+Notou-se que a natureza esparsa dos dados, bem como a falta de alguns dados tornou o trabalho desafiador. Porém ao validar os dados com profissinais da saúde e verificando a validade dos dados com o auxílio do teste KS, do aumento da acurrácia e do F-1 Score dos classificadores destinados a prever o status de aterosclerose nos pacientes, podemos afirmar que a síntese de Dados através de GANs tem potencial de ajudar a área da saúde em casos com poucos dados e que dependem de métodos caros.
 
 # Cronograma
 | Atividade |27/04|04/05|11/05|18/05|25/05|02/06|09/06|16/06|23/06|30/06
@@ -208,3 +210,5 @@ Nas próximas semanas, a geração desses novos dados será otimizada e será cr
 - [Conditional Wasserstein GAN-based Oversampling of Tabular Data for Imbalanced Learning](https://arxiv.org/pdf/2008.09202.pdf "Conditional Wasserstein GAN-based Oversampling of Tabular Data for Imbalanced Learning")
 - [Synthesizing Tabular Data using Conditional GAN](https://dspace.mit.edu/bitstream/handle/1721.1/128349/1202001437-MIT.pdf?sequence=1&isAllowed=y "Synthesizing Tabular Data using Conditional GAN")
 - [OCT-GAN: Neural ODE-based Conditional Tabular GANs](https://arxiv.org/pdf/2105.14969.pdf "OCT-GAN: Neural ODE-based Conditional Tabular GANs")
+- [Copula Flows for Synthetic Data Generation](https://arxiv.org/abs/2101.00598 "Copula Flows for Synthetic Data Generation")
+- 

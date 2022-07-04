@@ -164,7 +164,7 @@ Ao adaptar a CopulaGAN para a aplicação no contexto de miRNA, a pasta "reports
 
 Foram gerados 50 novos pacientes, que possuem características reais, que poderiam fazer parte do grupo original (no caso o grupo de hipertensos) acertando, inclusive a variável obesidade sendo dependente do IMC. Apesar dos dados se parecerem com os reais, e o o resultado do teste Kolmogorov-Smirnov entre os dados reais e os dados sintéticos ser de 0.8579, alguns dados são estranhos, como pacientes com medida de placa íntima-média de 1cm classificado como sem placa nessa camada.
 
-##Classificadores
+## Classificadores
 Foram desenvolvidos dois tipos de classficadores: Uma rede neural densa e uma regressão logísticia. 
 
 # Conclusão

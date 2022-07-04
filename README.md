@@ -169,10 +169,10 @@ Foram desenvolvidos dois tipos de classficadores: Uma rede neural densa e uma re
 Para ambos os casos foi utilizado a base de dados para o treinamento e a adição de dados nunca vistos pela rede para os testes
 
 | Tipo de rede | Adição de Dados Sintéticos | Acurácia | F1-Score |
-| Rede Neural Densa | - | 73.33% | 0.83 
-| Rede Neural Densa | x | 63.04% | 0.75
-| Regressão Logística | - | 70.0 % | 
-| Regressão Logística | x | 80.43% | 0.89
+| Rede Neural Densa | - | 73.33% | 0.83 | 
+| Rede Neural Densa | x | 63.04% | 0.75 |
+| Regressão Logística | - | 70.0 % | - |
+| Regressão Logística | x | 80.43% | 0.89 |
 
 # Conclusão
 A síntese de dados tem ganho muita popularidade devido a seus desempenhos nos campos de geração de imagem, texto e dados tabulares. Esse trabalho vem apresentar a utilização de uma CTGAN para gerar dados na área da saúde, em específico para a geração de pacientes com Aterosclerose no contexto de estudo da relação dos miRNA com a placa de gordura característica da doença.

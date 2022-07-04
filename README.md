@@ -31,7 +31,9 @@ Porém, a quantificação de microRNAs é um processo caro, desempenhado atravé
 
 CTGAN, e subsequentemente a CopulaGAN, é uma subcategoria de GAN (*Generative Adversal Network*) porém voltada para dados tabulares. GANs são redes neurais compostas por dois componentes, o gerador e o descriminador que são treinados simultaneamente. Dados tabulares, diferentemente de imagens e áudios, que são contínuas, podem conter dados de tipos variados (inteiros, decimais, categóricos), diferentes formas de distribuição (multimodal, gaussiano, não-gaussiano, etc.) e podem ser muito desbalanceados. Nesse contexto, é foi necessário a utilização de uma CTGAN, criando um modo específico para normalização para superar as distribuições não-gaussianas e multidimensional. O treinamento também é feito exemplo por exemplo, para que a CTGAN explore todos os possíveis valores de cada categoria.
 
- 
+Uma CTGAN pode ser entendida por:
+
+A Copula definida pela Figura abaixo, pode ajudar a CTGAN a sintentizar dados novos em situações nas quais as distribuições marginais são mais importantes.
 
 ### Objetivo
 Modelos generativos tem sido muito popular nos últimos anos nas áreas de geração de imagens, texto, áudio, séries temporais e dados tabulares. Nesse projeto será abordado o desenvolvimento de uma [CTGAN](https://proceedings.neurips.cc/paper/2019/file/254ed7d2de3b23ab10936522dd547b78-Paper.pdf "CTGAN") para geração de novos pacientes com Ateroscleroses e seus miRNAs com a finalidade de aumentar o número de exemplos para o estudo.
@@ -130,33 +132,40 @@ Os dados foram coletados de 178 pacientes, e foram analisadas 84 característica
 |AAS|Categórico| Paciente faz uso de anticoagulante (0-não, 1-sim)
 |obesidade|Categórico| Obesidade (1-não, 2-sim)
 
+A distribuição desses dados pode ser vista na Figura abaixo:
+
+Como notado, nenhuma das variáveis tem distribuições guassiana. Com isso em vista, a utilização da CopulaGAN é adequada uma vez que a CTGAN tem dificuldade de aprender padrões e interdependência, como a medida da camada íntima-média e o Status da doença.
 
 
 ### Abordagem
 Esse trabalho será abordado em quatro fases:
 
 1. Coleta e ocultação/deleção dos dados sensíveis: todo dado que possa identificar uma pessoa é retirado deste trabalho;
-2. Síntese de dados: Utilizar a abordagem de CTGAN para gerar um conjunto de pacientes artificiais com as 84 características;
+2. Síntese de dados: Utilizar a abordagem de CopulaTGAN para gerar um conjunto de pacientes artificiais com as 84 características;
 3. Validação: Utilizar cálculos já estabelecidos (IMC, por exemplo) e profissionais do laboratório cardiovascular da FCM para validar os dados gerados;
-4. Regressão: Criação e treino de uma rede neural que faz regressão duas vezes, uma com a adição dos dados sintéticos e outra sem, com o objetivo de obter um erro menor com os novos pacientes.
+4. Classificação: Criação e treino de um classificador, uma com a adição dos dados sintéticos e outra sem, com o objetivo de obter uma acurácia maior com a adição de novos pacientes.
 
 ### Avaliação
-Para a avaliar os dados gerados, vai ser utilizado além da validação descrita na subseção acima (cálculos já conhecidos, e validação de profissionais da área da saúde), vão ser comparados as métricas de regressão clássicas, como RSME (*Root Square Mean Error*). A hipótese é que com a adição dos pacientes sintéticos provenientes da CTGAN, o classificador tenha um desempenho melhor.
+Para a avaliar os dados gerados, vai ser utilizado além da validação descrita na subseção acima (cálculos já conhecidos, e validação de profissionais da área da saúde), vão ser comparados as métricas de classificação clássicas, como a Acurrácia e o F1-Score. A hipótese é que com a adição dos pacientes sintéticos provenientes da CopulaGAN, o classificador tenha um desempenho melhor.
 
 ### Ferramentas
 As ferramentas que são utilizadas nesse trabalho são:
 
 - [Google Colab](https://colab.research.google.com/ "Google Colab")
 - [Pytorch](https://pytorch.org/ "Pytorch")
-- [CTGAN](https://github.com/sdv-dev/CTGAN "CTGAN") (Implementação do Autor)
+- [Scikit-learn] (https://scikit-learn.org/stable/modules/linear_model.html#logistic-regression)
+- [CopulaGAN](https://sdv.dev/SDV/user_guides/single_table/copulagan.html) (SDV/Syntentic Data Vault)
 - [SPSS](https://www.ibm.com/br-pt/analytics/spss-statistics-software "SPSS")
 
 # Resultados
 O primeiro passo da metodologia, remover os dados sensíveis, foi feita utilizando o SPSS e não será demonstrado. Foi removido os nomes, datas de nascimento e foi gerado um novo identificador aleatório para esse trabalho.
 
-Ao adaptar a CTGAN para a aplicação no contexto de miRNA, a pasta "reports" contém os primeiros pacientes gerados.
+Ao adaptar a CopulaGAN para a aplicação no contexto de miRNA, a pasta "reports" contém os primeiros pacientes gerados.
 
-Foram gerados 15 novos pacientes, apesar dos dados gerados estarem com os mesmos tipos de dados que os originais, alguns pacientes não poderiam existir, como os exemplos: um paciente com concentração de ureia no sangue de 57mg/dL, um paciente com IMC errado (sua altura e seu peso não batem com o IMC).
+Foram gerados 50 novos pacientes, que possuem características reais, que poderiam fazer parte do grupo original (no caso o grupo de hipertensos) acertando, inclusive a variável obesidade sendo dependente do IMC. Apesar dos dados se parecerem com os reais, e o o resultado do teste Kolmogorov-Smirnov entre os dados reais e os dados sintéticos ser de 0.8579, alguns dados são estranhos, como pacientes com medida de placa íntima-média de 1cm classificado como sem placa nessa camada.
+
+##Classificadores
+Foram desenvolvidos dois tipos de classficadores: Uma rede neural densa e uma regressão logísticia. 
 
 # Conclusão
 A síntese de dados tem ganho muita popularidade devido a seus desempenhos nos campos de geração de imagem, texto e dados tabulares. Esse trabalho vem apresentar a utilização de uma CTGAN para gerar dados na área da saúde, em específico para a geração de pacientes com Aterosclerose no contexto de estudo da relação dos miRNA com a placa de gordura característica da doença.

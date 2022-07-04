@@ -35,8 +35,8 @@ Uma CTGAN pode ser entendida por:
 
 ![alt text](https://github.com/ryamaguti07/E3-MicroRNA-Syntesis-in-Patients-with-Atherosclerosis./blob/main/reports/images/ctgan.png)
 
-A Copula definida pela Figura abaixo, pode ajudar a CTGAN a sintentizar dados novos em situações nas quais as distribuições marginais são mais importantes.
-
+A Copula Guassianda definida pela Figura abaixo, pode ajudar a CTGAN a sintentizar dados novos em situações nas quais as distribuições marginais são mais importantes.
+![alt text](https://github.com/ryamaguti07/E3-MicroRNA-Syntesis-in-Patients-with-Atherosclerosis./blob/main/reports/images/copulaguas.PNG)
 ### Objetivo
 Modelos generativos tem sido muito popular nos últimos anos nas áreas de geração de imagens, texto, áudio, séries temporais e dados tabulares. Nesse projeto será abordado o desenvolvimento de uma [CTGAN](https://proceedings.neurips.cc/paper/2019/file/254ed7d2de3b23ab10936522dd547b78-Paper.pdf "CTGAN") para geração de novos pacientes com Ateroscleroses e seus miRNAs com a finalidade de aumentar o número de exemplos para o estudo.
 
